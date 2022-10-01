@@ -187,3 +187,4 @@ nbdist/
 /kotlin-coroutines-start/build/
 /kotlin-hibernate-start/build/
 /kotlin-start/build/
+/.idea/
