@@ -1,0 +1,44 @@
+[versions]
+
+vertxVersion = "4.3.3"
+kotlinVersion = "1.7.10"
+detektVersion = "1.19.0"
+log4jVersion = "2.19.0"
+mockitoVersion = "4.8.0"
+junitJupiterVersion = "5.7.0"
+testcontainersVersion = "1.17.3"
+hibernateReactiveVersion = "1.1.7.Final"
+
+
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
+
+
+[libraries]
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlinVersion" }
+
+vertX-web = { group = "io.vertx", name = "vertx-web", version.ref = "vertxVersion" }
+vertX-junit5 = { group = "io.vertx", name = "vertx-junit5", version.ref = "vertxVersion" }
+vertX-kotlin = { group = "io.vertx", name = "vertx-lang-kotlin", version.ref = "vertxVersion" }
+vertX-pg = { group = "io.vertx", name = "vertx-pg-client", version.ref = "vertxVersion" }
+vertX-kotlin-coroutines = { group = "io.vertx", name = "vertx-lang-kotlin-coroutines", version.ref = "vertxVersion" }
+
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiterVersion" }
+mockito-jupiter = { group = "org.mockito", name = "mockito-junit-jupiter", version.ref = "mockitoVersion" }
+
+logging-log4j = { group = "org.apache.logging.log4j", name = "log4j-core", version.ref = "log4jVersion" }
+
+hibernate-reactive = { group = "org.hibernate.reactive", name = "hibernate-reactive-core", version.ref = "hibernateReactiveVersion" }
+
+testcontainers-testcontainers = { group = "org.testcontainers", name = "testcontainers", version.ref = "testcontainersVersion" }
+testcontainers-jupiter = { group = "org.testcontainers", name = "junit-jupiter", version.ref = "testcontainersVersion" }
+testcontainers-postgresql = { group = "org.testcontainers", name = "postgresql", version.ref = "testcontainersVersion" }
+
+
+[bundles]
+testcontainers = [
+    "testcontainers-testcontainers",
+    "testcontainers-postgresql",
+    "testcontainers-jupiter",
+]
