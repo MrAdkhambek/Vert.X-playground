@@ -5,9 +5,11 @@ import io.vertx.junit5.VertxExtension
 import io.vertx.junit5.VertxTestContext
 import me.adkhambek.starter.entity.User
 import org.hibernate.cfg.Configuration
+import org.hibernate.cfg.Environment
 import org.hibernate.reactive.provider.ReactiveServiceRegistryBuilder
 import org.hibernate.reactive.stage.Stage
 import org.hibernate.service.ServiceRegistry
+import org.hibernate.tool.schema.Action
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -43,11 +45,11 @@ internal class UserRepositoryImplTest {
         val url: String = "jdbc:postgresql://localhost:${container.firstMappedPort}/$DB_NAME"
 
         val hibernateProps = Properties()
-        hibernateProps["hibernate.connection.url"] = url
-        hibernateProps["hibernate.connection.username"] = DB_USER
-        hibernateProps["hibernate.connection.password"] = DB_PASSWORD
-        hibernateProps["javax.persistence.schema-generation.database.action"] = "create"
-        hibernateProps["hibernate.dialect"] = "org.hibernate.dialect.PostgreSQL95Dialect"
+        hibernateProps[Environment.URL] = url
+        hibernateProps[Environment.USER] = DB_USER
+        hibernateProps[Environment.PASS] = DB_PASSWORD
+        hibernateProps[Environment.HBM2DDL_DATABASE_ACTION] = Action.CREATE
+        hibernateProps[Environment.DIALECT] = "org.hibernate.dialect.PostgreSQL95Dialect"
 
         val hibernateConfiguration = Configuration()
         hibernateConfiguration.properties = hibernateProps
