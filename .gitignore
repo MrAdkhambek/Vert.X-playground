@@ -188,3 +188,5 @@ nbdist/
 /kotlin-hibernate-start/build/
 /kotlin-start/build/
 /.idea/
+/buildSrc/.gradle/
+/buildSrc/build/
