@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="me.adkhambek.starter.MainVerticleTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-03T00:21:48" hostname="MacBook-Pro-admin.local" time="1.232">
-  <properties/>
-  <testcase name="test deploy main verticle(Vertx, VertxTestContext)" classname="me.adkhambek.starter.MainVerticleTest" time="1.232"/>
-  <system-out><![CDATA[HTTP server started on port 8888
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
