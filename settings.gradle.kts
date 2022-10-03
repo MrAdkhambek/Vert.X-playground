@@ -7,4 +7,6 @@ include(
     "kotlin-start",
     "kotlin-coroutines-start",
     "kotlin-hibernate-start",
+
+    "kotlin-dagger-start",
 )

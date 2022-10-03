@@ -5,6 +5,7 @@ kotlinVersion = "1.7.10"
 detektVersion = "1.19.0"
 log4jVersion = "2.19.0"
 mockitoVersion = "4.8.0"
+daggerVersion = "2.44"
 junitJupiterVersion = "5.7.0"
 testcontainersVersion = "1.17.3"
 hibernateReactiveVersion = "1.1.7.Final"
@@ -13,6 +14,7 @@ hibernateReactiveVersion = "1.1.7.Final"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinVersion" }
 
 
 [libraries]
@@ -35,6 +37,8 @@ testcontainers-testcontainers = { group = "org.testcontainers", name = "testcont
 testcontainers-jupiter = { group = "org.testcontainers", name = "junit-jupiter", version.ref = "testcontainersVersion" }
 testcontainers-postgresql = { group = "org.testcontainers", name = "postgresql", version.ref = "testcontainersVersion" }
 
+dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "daggerVersion" }
+dagger-dagger = { group = "com.google.dagger", name = "dagger", version.ref = "daggerVersion" }
 
 [bundles]
 testcontainers = [
